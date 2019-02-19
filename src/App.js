@@ -6,6 +6,7 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
 import PostJob from "./pages/PostJob"
+import Dashboard from "./pages/Dashboard"
 
 export default class App extends Component {
   render() {
@@ -15,7 +16,8 @@ export default class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
-          <Route exact path="post-job" component={PostJob} />
+          <Route exact path="/post-job" component={PostJob} />
+          <Route exact path="/dashboard" component={Dashboard} />
         </Main>
       </Router>
     )

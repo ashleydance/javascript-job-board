@@ -1,29 +1,28 @@
 import React, { Component } from "react"
-import { FAKE_LISTINGS } from "../util/consts"
+import PropTypes from "prop-types"
 import ListingFilters from "./ListingFilters"
 import SingleListing from "./SingleListing"
 
 export default class JobListings extends Component {
-  state = {
-    filter: null,
-    jobListings: [],
-    filteredListings: []
+  static propTypes = {
+    listings: PropTypes.array.isRequired
   }
 
-  componentDidMount() {
-    this.setState({
-      jobListings: FAKE_LISTINGS,
-      filteredListings: FAKE_LISTINGS
-    })
+  state = {
+    filter: null,
+    filteredListings: []
   }
 
   handlePressFilter = filter => {
     if (this.state.filter === filter || filter === "clear") {
-      this.setState({ filter: null })
+      this.setState({
+        filter: null,
+        filteredListings: []
+      })
       return null
     }
 
-    const filteredListings = this.state.jobListings.filter(listing =>
+    const filteredListings = this.props.listings.filter(listing =>
       listing.tags.includes(filter)
     )
 
@@ -34,21 +33,22 @@ export default class JobListings extends Component {
   }
 
   renderListings() {
-    if (!this.state.filter) {
-      return this.state.jobListings.map(listing => (
+    const { listings } = this.props
+    const { filteredListings, filter } = this.state
+
+    if (!filter) {
+      return listings.map(listing => (
         <SingleListing
           key={listing.id}
-          s
           title={listing.title}
           tags={listing.tags}
         />
       ))
     }
 
-    return this.state.filteredListings.map(listing => (
+    return filteredListings.map(listing => (
       <SingleListing
         key={listing.id}
-        s
         title={listing.title}
         tags={listing.tags}
       />
