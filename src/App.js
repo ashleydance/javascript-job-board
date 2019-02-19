@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
+import { BrowserRouter as Router, Route } from "react-router-dom"
 import { BODY_FONT_FAMILY } from './util/consts'
-import Header from './components/Header';
-import Footer from './components/Footer';
-import JobListings from './components/JobListings';
-
+import Home from './pages/Home';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import PostJob from './pages/PostJob';
 export default class App extends Component {
   render() {
     return (
-      <Main>
-        <Header />
-        <JobListings />
-        <Footer />
-      </Main>
+      <Router>
+        <Main>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="post-job" component={PostJob} />
+        </Main>
+      </Router>
     )
   }
 }

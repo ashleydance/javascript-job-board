@@ -6,9 +6,9 @@ export default function Header () {
   return (
     <HeaderWrapper>
       <ul>
-        <li><a href="#">Post Job</a></li>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Log in</a></li>
+        <li><a href="https://google.com">Post Job</a></li>
+        <li><a href="https://google.com">Sign Up</a></li>
+        <li><a href="https://google.com">Log in</a></li>
       </ul>
       <Title>JavaScript Jobs <span role="img" aria-label="computer">💻</span></Title>
     </HeaderWrapper>
