@@ -1,40 +1,44 @@
-import React, { Component } from 'react'
-import { FAKE_LISTINGS } from '../util/consts'
-import ListingFilters from './ListingFilters'
-import SingleListing from './SingleListing'
+import React, { Component } from "react"
+import { FAKE_LISTINGS } from "../util/consts"
+import ListingFilters from "./ListingFilters"
+import SingleListing from "./SingleListing"
 
 export default class JobListings extends Component {
   state = {
     filter: null,
     jobListings: [],
-    filteredListings: [],
+    filteredListings: []
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.setState({
       jobListings: FAKE_LISTINGS,
-      filteredListings: FAKE_LISTINGS,
+      filteredListings: FAKE_LISTINGS
     })
   }
 
   handlePressFilter = filter => {
-    if ( this.state.filter === filter ) {
+    if (this.state.filter === filter || filter === "clear") {
       this.setState({ filter: null })
       return null
     }
 
-    const filteredListings = this.state.jobListings.filter( listing => listing.tags.includes(filter))
+    const filteredListings = this.state.jobListings.filter(listing =>
+      listing.tags.includes(filter)
+    )
+
     this.setState({
       filter,
-      filteredListings,
+      filteredListings
     })
   }
 
-  renderListings () {
-    if ( !this.state.filter ) {
+  renderListings() {
+    if (!this.state.filter) {
       return this.state.jobListings.map(listing => (
         <SingleListing
-          key={listing.id}s
+          key={listing.id}
+          s
           title={listing.title}
           tags={listing.tags}
         />
@@ -43,7 +47,8 @@ export default class JobListings extends Component {
 
     return this.state.filteredListings.map(listing => (
       <SingleListing
-        key={listing.id}s
+        key={listing.id}
+        s
         title={listing.title}
         tags={listing.tags}
       />
