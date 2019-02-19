@@ -20,17 +20,17 @@ export default class Login extends Component {
   }
 
   render() {
-    const { username, password } = this.state
+    const { email, password } = this.state
     return (
       <div>
         <Header />
         <form>
           <input
-            name="username"
-            value={username}
+            name="email"
+            value={email}
             type="text"
-            onChange={event => this.handleInputChange("username", event)}
-            placeholder="Username"
+            onChange={event => this.handleInputChange("email", event)}
+            placeholder="email"
           />
           <input
             name="passowrd"
