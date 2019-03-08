@@ -29,7 +29,7 @@ const TagWrapper = styled.div`
 `
 
 const Tag = styled.div`
-  font-size: 14px;
+  font-size: 12px;
   padding: 3px 15px;
   border-radius: 22px;
   border: 1px solid #000;

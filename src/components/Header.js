@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { HEADING_FONT_FAMILY } from "../util/consts"
+import { YELLOW } from "../util/consts"
 import Navigation from "./Navigation"
 
 export default function Header() {
@@ -19,12 +19,11 @@ export default function Header() {
 
 const HeaderWrapper = styled.header`
   padding: 4em;
-  border-top: solid 5px #f7df1e;
+  border-top: solid 10px ${YELLOW};
   text-align: center;
 `
 
 const Title = styled.h1`
   color: #222;
   font-size: 40px;
-  font-family: ${HEADING_FONT_FAMILY};
 `

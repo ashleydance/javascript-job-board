@@ -1,8 +1,9 @@
 export const HEADING_FONT_FAMILY = "Open Sans, sans-serif"
-export const BODY_FONT_FAMILY = "Roboto sans-serif"
+export const BODY_FONT_FAMILY = "'Roboto', sans-serif"
 
 export const YELLOW = "#f7df1e"
 export const DARK_YELLOW = "#c5b218"
+export const WHITE = "#FFFFFF"
 export const BORDER_COLOR = "#E6E6E6"
 
 export const FAKE_LISTINGS = [
