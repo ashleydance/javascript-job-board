@@ -1,10 +1,15 @@
 export const HEADING_FONT_FAMILY = "Open Sans, sans-serif"
 export const BODY_FONT_FAMILY = "Roboto sans-serif"
 
+export const YELLOW = "#f7df1e"
+export const DARK_YELLOW = "#c5b218"
+export const BORDER_COLOR = "#E6E6E6"
+
 export const FAKE_LISTINGS = [
   {
     id: 1,
     title: "Example 1 react-remote",
+    company: "Company ABC",
     tags: ["react", "remote"]
   },
   {

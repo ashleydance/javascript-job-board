@@ -1,21 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { HEADING_FONT_FAMILY } from "../util/consts"
+import Navigation from "./Navigation"
 
 export default function Header() {
   return (
     <HeaderWrapper>
-      <ul>
-        <li>
-          <a href="https://google.com">Post Job</a>
-        </li>
-        <li>
-          <a href="https://google.com">Sign Up</a>
-        </li>
-        <li>
-          <a href="https://google.com">Log in</a>
-        </li>
-      </ul>
+      <Navigation />
       <Title>
         JavaScript Jobs{" "}
         <span role="img" aria-label="computer">

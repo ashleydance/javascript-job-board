@@ -1,7 +1,13 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
 import ListingFilters from "./ListingFilters"
 import SingleListing from "./SingleListing"
+
+const ListingWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 700px;
+`
 
 export default class JobListings extends Component {
   static propTypes = {
@@ -61,8 +67,7 @@ export default class JobListings extends Component {
         <ListingFilters
           onPressFilter={filter => this.handlePressFilter(filter)}
         />
-        {this.renderListings()}
-        <h1>this is a job listings</h1>
+        <ListingWrapper>{this.renderListings()}</ListingWrapper>
       </div>
     )
   }
